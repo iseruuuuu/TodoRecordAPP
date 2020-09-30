@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE4340A625047F42005E56C6 /* DetailRoww.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4340A525047F42005E56C6 /* DetailRoww.swift */; };
+		CE4340A82504887D005E56C6 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4340A72504887D005E56C6 /* CheckBox.swift */; };
+		CE4340AA2504FDB9005E56C6 /* newTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4340A92504FDB9005E56C6 /* newTask.swift */; };
+		CE4340AE2505043C005E56C6 /* Binding+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4340AD2505043C005E56C6 /* Binding+Extension.swift */; };
+		CE4BB4D02512F59E00CA6A9D /* recordRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BB4CF2512F59E00CA6A9D /* recordRecord.swift */; };
+		CEA322132505C4E80053EBC1 /* EditTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA322122505C4E80053EBC1 /* EditTask.swift */; };
+		CEA322172505DC0E0053EBC1 /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA322162505DC0E0053EBC1 /* KeyboardObserver.swift */; };
+		CEA322192505DD020053EBC1 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA322182505DD020053EBC1 /* UIApplication+Extension.swift */; };
+		CEC41D12250CBB3900FD2274 /* recordNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC41D11250CBB3900FD2274 /* recordNew.swift */; };
 		CEFF3D9E25036C1E00085D2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3D9D25036C1E00085D2C /* AppDelegate.swift */; };
 		CEFF3DA025036C1E00085D2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3D9F25036C1E00085D2C /* SceneDelegate.swift */; };
 		CEFF3DA325036C1E00085D2C /* voiceAPP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3DA125036C1E00085D2C /* voiceAPP.xcdatamodeld */; };
@@ -16,6 +25,13 @@
 		CEFF3DAD25036C2100085D2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFF3DAB25036C2100085D2C /* LaunchScreen.storyboard */; };
 		CEFF3DB825036C2200085D2C /* voiceAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3DB725036C2200085D2C /* voiceAPPTests.swift */; };
 		CEFF3DC325036C2200085D2C /* voiceAPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3DC225036C2200085D2C /* voiceAPPUITests.swift */; };
+		CEFF3DD125036D7E00085D2C /* CategoryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3DD025036D7E00085D2C /* CategoryImage.swift */; };
+		CEFF3DD4250374CD00085D2C /* Color+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3DD3250374CD00085D2C /* Color+Extention.swift */; };
+		CEFF3DD6250375BA00085D2C /* userView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3DD5250375BA00085D2C /* userView.swift */; };
+		CEFF3DD82503B36200085D2C /* Entity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3DD72503B36200085D2C /* Entity+Extension.swift */; };
+		CEFF3DDA2503B52700085D2C /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3DD92503B52700085D2C /* CategoryView.swift */; };
+		CEFF3DDC2503C61300085D2C /* QuickNewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3DDB2503C61300085D2C /* QuickNewTask.swift */; };
+		CEFF3DE025046BD100085D2C /* Llist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3DDF25046BD100085D2C /* Llist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +52,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE4340A525047F42005E56C6 /* DetailRoww.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRoww.swift; sourceTree = "<group>"; };
+		CE4340A72504887D005E56C6 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		CE4340A92504FDB9005E56C6 /* newTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTask.swift; sourceTree = "<group>"; };
+		CE4340AD2505043C005E56C6 /* Binding+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extension.swift"; sourceTree = "<group>"; };
+		CE4BB4CF2512F59E00CA6A9D /* recordRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordRecord.swift; sourceTree = "<group>"; };
+		CEA322122505C4E80053EBC1 /* EditTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTask.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		CEA322162505DC0E0053EBC1 /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
+		CEA322182505DD020053EBC1 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		CEC41D11250CBB3900FD2274 /* recordNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordNew.swift; sourceTree = "<group>"; };
 		CEFF3D9A25036C1E00085D2C /* voiceAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = voiceAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFF3D9D25036C1E00085D2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEFF3D9F25036C1E00085D2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +76,13 @@
 		CEFF3DBE25036C2200085D2C /* voiceAPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = voiceAPPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFF3DC225036C2200085D2C /* voiceAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voiceAPPUITests.swift; sourceTree = "<group>"; };
 		CEFF3DC425036C2200085D2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEFF3DD025036D7E00085D2C /* CategoryImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryImage.swift; sourceTree = "<group>"; };
+		CEFF3DD3250374CD00085D2C /* Color+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extention.swift"; sourceTree = "<group>"; };
+		CEFF3DD5250375BA00085D2C /* userView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userView.swift; sourceTree = "<group>"; };
+		CEFF3DD72503B36200085D2C /* Entity+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+Extension.swift"; sourceTree = "<group>"; };
+		CEFF3DD92503B52700085D2C /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		CEFF3DDB2503C61300085D2C /* QuickNewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickNewTask.swift; sourceTree = "<group>"; };
+		CEFF3DDF25046BD100085D2C /* Llist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Llist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +133,22 @@
 		CEFF3D9C25036C1E00085D2C /* voiceAPP */ = {
 			isa = PBXGroup;
 			children = (
+				CEFF3DD22503749700085D2C /* Extention */,
 				CEFF3D9D25036C1E00085D2C /* AppDelegate.swift */,
 				CEFF3D9F25036C1E00085D2C /* SceneDelegate.swift */,
 				CEFF3DA425036C1E00085D2C /* ContentView.swift */,
+				CEFF3DD025036D7E00085D2C /* CategoryImage.swift */,
+				CEFF3DD5250375BA00085D2C /* userView.swift */,
+				CEFF3DD92503B52700085D2C /* CategoryView.swift */,
+				CE4340A72504887D005E56C6 /* CheckBox.swift */,
+				CEFF3DDB2503C61300085D2C /* QuickNewTask.swift */,
+				CEFF3DDF25046BD100085D2C /* Llist.swift */,
+				CE4340A525047F42005E56C6 /* DetailRoww.swift */,
+				CE4340A92504FDB9005E56C6 /* newTask.swift */,
+				CEA322122505C4E80053EBC1 /* EditTask.swift */,
+				CEA322162505DC0E0053EBC1 /* KeyboardObserver.swift */,
+				CEC41D11250CBB3900FD2274 /* recordNew.swift */,
+				CE4BB4CF2512F59E00CA6A9D /* recordRecord.swift */,
 				CEFF3DA625036C2100085D2C /* Assets.xcassets */,
 				CEFF3DAB25036C2100085D2C /* LaunchScreen.storyboard */,
 				CEFF3DAE25036C2100085D2C /* Info.plist */,
@@ -137,6 +182,17 @@
 				CEFF3DC425036C2200085D2C /* Info.plist */,
 			);
 			path = voiceAPPUITests;
+			sourceTree = "<group>";
+		};
+		CEFF3DD22503749700085D2C /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				CEFF3DD3250374CD00085D2C /* Color+Extention.swift */,
+				CEFF3DD72503B36200085D2C /* Entity+Extension.swift */,
+				CE4340AD2505043C005E56C6 /* Binding+Extension.swift */,
+				CEA322182505DD020053EBC1 /* UIApplication+Extension.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +258,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = user;
 				TargetAttributes = {
 					CEFF3D9925036C1E00085D2C = {
@@ -270,10 +326,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFF3DD6250375BA00085D2C /* userView.swift in Sources */,
+				CEFF3DDC2503C61300085D2C /* QuickNewTask.swift in Sources */,
+				CE4BB4D02512F59E00CA6A9D /* recordRecord.swift in Sources */,
+				CEA322132505C4E80053EBC1 /* EditTask.swift in Sources */,
+				CEC41D12250CBB3900FD2274 /* recordNew.swift in Sources */,
+				CEFF3DE025046BD100085D2C /* Llist.swift in Sources */,
+				CEA322192505DD020053EBC1 /* UIApplication+Extension.swift in Sources */,
+				CE4340AA2504FDB9005E56C6 /* newTask.swift in Sources */,
+				CE4340AE2505043C005E56C6 /* Binding+Extension.swift in Sources */,
+				CEFF3DD4250374CD00085D2C /* Color+Extention.swift in Sources */,
 				CEFF3D9E25036C1E00085D2C /* AppDelegate.swift in Sources */,
 				CEFF3DA325036C1E00085D2C /* voiceAPP.xcdatamodeld in Sources */,
 				CEFF3DA525036C1E00085D2C /* ContentView.swift in Sources */,
+				CEFF3DD125036D7E00085D2C /* CategoryImage.swift in Sources */,
+				CEFF3DD82503B36200085D2C /* Entity+Extension.swift in Sources */,
+				CE4340A625047F42005E56C6 /* DetailRoww.swift in Sources */,
 				CEFF3DA025036C1E00085D2C /* SceneDelegate.swift in Sources */,
+				CEA322172505DC0E0053EBC1 /* KeyboardObserver.swift in Sources */,
+				CE4340A82504887D005E56C6 /* CheckBox.swift in Sources */,
+				CEFF3DDA2503B52700085D2C /* CategoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +418,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -406,6 +479,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -443,6 +517,7 @@
 				DEVELOPMENT_TEAM = D453TST7T9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = voiceAPP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,6 +538,7 @@
 				DEVELOPMENT_TEAM = D453TST7T9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = voiceAPP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
