@@ -54,13 +54,13 @@
     Section(header: Text("メモ")) {
         TextField("メモ", text: Binding($todo.task2,"メモ"))
     }
-    Section(header: Text("メモ")) {
+    Section(header: Text("")) {
         VStack {
            NavigationLink(destination: recordRecord()) {
                 Text("録音")
     }
   }
-//}
+}
  
     Section(header: Text("操作")) {
         Button(action: {
@@ -106,4 +106,4 @@
     }
   }
 }
-    }
+    

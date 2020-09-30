@@ -146,7 +146,7 @@ struct newTask: View {
                 
                 
                
-               Section(header: Text("メモ")) {
+               Section(header: Text("")) {
                 VStack {
                     NavigationLink(destination: recordRecord()) {
                         Text("録音")  //, text: $record

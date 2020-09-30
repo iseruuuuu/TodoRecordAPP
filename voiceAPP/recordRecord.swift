@@ -37,10 +37,73 @@ struct  Homee : View {
         NavigationView{
             VStack{
                 List(self.audios,id: \.self){i in
-   
                     
-    // printing only file name....　ファイルの印刷
-        Text(i.relativeString)
+                    // printing only file name....　ファイルの印刷
+                        Text(i.relativeString)
+             /*     Text("  \n ")
+                    Text("  \n ")
+                    Text("  \n ")
+                    Text("  \n ")
+                    Text("  \n ")
+                    Text("  \n ")
+                    Text("  \n ") */
+ 
+                    
+                    
+                    //共有機能
+                    //ボタンを追加できた
+                    Button(action: {
+                        print("タップされました")
+                    }) {
+                        Image(systemName: "ellipsis")   // システムアイコンを指定
+                        Text("")
+                    }
+                    
+                   
+                    
+                    //15秒戻る機能
+                    Button(action: {
+                        print("タップされました")
+                    }) {
+                        Image(systemName: "gobackward.15")   // システムアイコンを指定
+                        Text("")
+                    }
+                    
+                    
+                    //再生機能
+                    Button(action: {
+                        print("タップされました")
+                    }) {
+                        Image(systemName: "play.fill")   // システムアイコンを指定
+                        Text("")
+                    }
+                    
+                   
+                    
+                    
+                    //15秒進める。
+                    Button(action: {
+                        print("タップされました")
+                    }) {
+                        Image(systemName: "goforward.15")   // システムアイコンを指定
+                        Text("")
+                    };
+                    
+                   
+                    //捨てる動作
+                    Button(action: {
+                        print("タップされました")
+                    }) {
+                        Image(systemName: "trash")   // システムアイコンを指定
+                        Text("")
+                    }
+                    
+                   
+                   
+ 
+                    
+                    
+                    
     }
             Button(action: {
     //Now going to record audio.　音声の録音
