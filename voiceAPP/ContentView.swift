@@ -14,8 +14,8 @@ struct ContentView: View {
             Color.tBackground
             .edgesIgnoringSafeArea(.top)
             .frame(height:0)
-            userView(image: Image("iseki"), userName: "Ryu", conment: "プロフィール文がまだありません。")
-            VStack {
+                /*userView(image: Image("iseki"), userName: "Ryu", conment: "プロフィール文がまだありません。")*/
+            //VStack {
             
             HStack (spacing: 0){
             CategoryView(Category: .ImpUrg_1st)
@@ -32,11 +32,14 @@ struct ContentView: View {
             Spacer()
             CategoryView(Category: .NImpNUrg_6th)
         }
-            }.padding()
-        }.background(Color.tBackground)
+            }
+        .padding()
+        .background(Color.tBackground)
             .edgesIgnoringSafeArea(.bottom)
     }
-}
+    }
+   
+//}
 
 struct ContentView_Previews: PreviewProvider {
     static let context = (UIApplication.shared.delegate as! AppDelegate)

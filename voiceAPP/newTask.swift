@@ -132,12 +132,13 @@ struct newTask: View {
                     HStack {
                         CategoryImage(category)
                         Text(category.toString())
+                        
                     }.tag(category.rawValue)
                     .foregroundColor(.black)
                     }
                     
                 }
-                
+                .foregroundColor(.black)
                 
                 
                 
@@ -180,11 +181,12 @@ struct newTask: View {
                 }) {
                     Text("保存")
                     
+                    
              
                     
                     
             }
-            
+                .foregroundColor(.blue)
             )
         }
     }

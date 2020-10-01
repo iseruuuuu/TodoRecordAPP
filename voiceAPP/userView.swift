@@ -6,6 +6,8 @@
 //  Copyright © 2020 user. All rights reserved.
 //
 
+//このファイルは使わない。
+
 import SwiftUI
 
 struct userView: View {

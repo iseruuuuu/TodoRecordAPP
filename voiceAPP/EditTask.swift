@@ -36,25 +36,30 @@
             Section(header: Text("タスク")) {
                 TextField("情報の入力", text: Binding($todo.task,"内容の編集"))
     }
+            .foregroundColor(.black)
            
     Picker(selection: $todo.category, label: Text("種類")) {
         ForEach(categories, id: \.self) { category in
             HStack {
                     CategoryImage(category)
                     Text(category.toString())
+                        .foregroundColor(.black)
     }
+         
                     .tag(category.rawValue)
-                
+            .foregroundColor(.black)
     }
-        .foregroundColor(.black)
+        
 }
-                
+    .foregroundColor(.black)
                 
                 
                 
     Section(header: Text("メモ")) {
         TextField("メモ", text: Binding($todo.task2,"メモ"))
     }
+    .foregroundColor(.black)
+            
     Section(header: Text("録音")) {
         VStack {
            NavigationLink(destination: recordRecord()) {
@@ -87,6 +92,7 @@
     //dismissで画面を閉じる
     self.presentationMode.wrappedValue.dismiss()    }) {
         Text("更新")
+            .foregroundColor(.blue)
     })
                 
     .actionSheet(isPresented: $showingSheet) {
