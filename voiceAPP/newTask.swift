@@ -148,11 +148,7 @@ struct newTask: View {
                     Section(header: Text("メモ")) {
                     TextField("メモ", text: $task2)}
                 
-                
-                
-                
-               
-               Section(header: Text("")) {
+              Section(header: Text("")) {
                 VStack {
                     NavigationLink(destination: recordRecord()) {
                         Text("録音")  //, text: $record
