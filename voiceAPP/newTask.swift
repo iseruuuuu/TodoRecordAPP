@@ -111,7 +111,9 @@ struct newTask: View {
         NavigationView {
             Form {
                 Section(header: Text("内容")) {
-                TextField("内容の入力", text: $task)    }
+                TextField("内容の入力", text: $task)
+                    
+                }
                 
                 
                 
@@ -130,7 +132,11 @@ struct newTask: View {
                     HStack {
                         CategoryImage(category)
                         Text(category.toString())
-                    }.tag(category.rawValue)      }}
+                    }.tag(category.rawValue)
+                    .foregroundColor(.black)
+                    }
+                    
+                }
                 
                 
                 
@@ -151,7 +157,7 @@ struct newTask: View {
                     NavigationLink(destination: recordRecord()) {
                         Text("録音")  //, text: $record
                     }
-                        
+                    .foregroundColor(.black)
                 }
               //  }
              

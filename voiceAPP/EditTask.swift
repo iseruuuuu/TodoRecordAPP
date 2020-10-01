@@ -46,6 +46,7 @@
                     .tag(category.rawValue)
                 
     }
+        .foregroundColor(.black)
 }
                 
                 
@@ -54,11 +55,15 @@
     Section(header: Text("メモ")) {
         TextField("メモ", text: Binding($todo.task2,"メモ"))
     }
-    Section(header: Text("")) {
+    Section(header: Text("録音")) {
         VStack {
            NavigationLink(destination: recordRecord()) {
                 Text("録音")
+            
     }
+           
+           .foregroundColor(.black)
+           
   }
 }
  

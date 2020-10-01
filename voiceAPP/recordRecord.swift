@@ -36,13 +36,14 @@ struct  Homee : View {
                     VStack {
             // printing only file name....　ファイルの印刷
                 Text(i.relativeString)
-                    Divider()
+                    .font(.headline)
+                Divider()
     
                     // Text("  \n ")
            //共有機能
             //ボタンを追加できた
                     
-                HStack {
+                        HStack(spacing: 50) {
                         
                     
         Button(action: {
@@ -51,9 +52,11 @@ struct  Homee : View {
                 Image(systemName: "ellipsis")   // システムアイコンを指定
                     Text("")
             
-        }
+            }
             .foregroundColor(.blue)
-            .font(.largeTitle)
+            .font(.headline)
+                            
+                            
             //15秒戻る機能
             Button(action: {
                 print("タップされま")
@@ -61,6 +64,7 @@ struct  Homee : View {
                 Image(systemName: "gobackward.15")   // システムアイコンを指定
                     Text("")
             }
+            .font(.title)
            
                     
             //再生機能
@@ -70,6 +74,7 @@ struct  Homee : View {
                 Image(systemName: "play.fill")   // システムアイコンを指定
                     Text("")
             }
+            .font(.title)
            
 
             //15秒進める。
@@ -79,6 +84,7 @@ struct  Homee : View {
                 Image(systemName: "goforward.15")   // システムアイコンを指定
                 Text("")
             }
+            .font(.title)
            
                  
                     
@@ -90,11 +96,15 @@ struct  Homee : View {
                 Text("")
             }
             .foregroundColor(.blue)
+            .font(.headline)
             
-           
-            
- 
-                }}}
+            }
+                       
+        
+                    }
+    
+                }
+                
                 
                 /// 編集モード時のみ削除処理を有効にする
                //     .onDelete(perform: envEditMode?.wrappedValue.isEditing ?? false ? rowRemove : nil)
@@ -168,6 +178,7 @@ struct  Homee : View {
             }//タイトル
             .navigationBarTitle("録音")
             .navigationBarItems(trailing: EditButton())
+            .foregroundColor(.blue)
         }
         
         .alert(isPresented: self.$alert, content: {
