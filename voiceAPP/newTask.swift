@@ -10,43 +10,37 @@ import SwiftUI
 import Speech
 import AVFoundation
 
-
 class ViewController: UIViewController, AVAudioRecorderDelegate, UITableViewDelegate, UITableViewDataSource {
    
-       var recordingSession:AVAudioSession!
-       var audioRecorder:AVAudioRecorder!
-       var audioPlayer:AVAudioPlayer!
-       var numberOfRecords:Int = 0
-       @IBOutlet weak var buttonLabel: UIButton!
-       @IBOutlet weak var myTableView: UITableView!
+    var recordingSession:AVAudioSession!
+    var audioRecorder:AVAudioRecorder!
+    var audioPlayer:AVAudioPlayer!
+    var numberOfRecords:Int = 0
+    @IBOutlet weak var buttonLabel: UIButton!
+    @IBOutlet weak var myTableView: UITableView!
+    
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            //setting up session 音声の許可の設定
+            recordingSession = AVAudioSession.sharedInstance()
+            if let number:Int = UserDefaults.standard.object(forKey: "myNumber") as? Int    {
+            numberOfRecords = number   }
+            AVAudioSession.sharedInstance().requestRecordPermission { (hasPermission) in
+            if hasPermission{  print ("ACCEPTED")  }}}
+            //Function that gets path to directory
+            func getDirectory() -> URL {
+            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            let documentDirectory = paths[0]
+            return documentDirectory
+        }
 
-            
-        
-            
-            
-            
-                override func viewDidLoad() {
-                super.viewDidLoad()
-                //setting up session 音声の許可の設定
-                recordingSession = AVAudioSession.sharedInstance()
-                if let number:Int = UserDefaults.standard.object(forKey: "myNumber") as? Int    {
-               numberOfRecords = number   }
-                AVAudioSession.sharedInstance().requestRecordPermission { (hasPermission) in
-                if hasPermission{  print ("ACCEPTED")  }}}
-                //Function that gets path to directory
-                func getDirectory() -> URL {
-                let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-                let documentDirectory = paths[0]
-                return documentDirectory    }
 
-        
-        
-        
         //Function that displays an alert
         func displayAlert(title:String, message:String)
         { let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
              alert.addAction(UIAlertAction(title: "dismiss", style: .default, handler: nil))
-             present(alert, animated: true, completion: nil)     }
+             present(alert, animated: true, completion: nil)
+        }
         
         
         //SETTING UO Table view  テーブルの設定
@@ -74,8 +68,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, UITableViewDele
                 
             }
         }
-        
-        
     }
 
 
@@ -83,6 +75,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, UITableViewDele
 
 struct newTask: View {
     
+  //  @ObservedObject var todo: Entity
     
     @State var task: String = ""
     @State var task2: String = ""
@@ -104,6 +97,11 @@ struct newTask: View {
     }
     
     
+    
+    
+    
+    
+    
     //タイトル（科目名の入力）
     //enviromentは、
     @Environment(\.presentationMode) var presentationMode
@@ -111,52 +109,58 @@ struct newTask: View {
         NavigationView {
             Form {
                 Section(header: Text("内容")) {
-                TextField("内容の入力", text: $task)
-                    
+                    TextField("内容の入力", text: $task)
+                    .foregroundColor(.black)
                 }
+                    .foregroundColor(.black)
                 
-                
-                
-                
-                
-                /*    Section(header: Toggle(isOn: Binding(isNotNil: $time, defaultValue: Date())){Text("時間設定")}) {
+                    Section(header: Toggle(isOn: Binding(isNotNil: $time, defaultValue: Date())){Text("時間設定")}) {
                     if time != nil {
                DatePicker(selection: Binding($time, Date()), label: { Text("日時")})
                 } else {
-                   Text("時間未設定").foregroundColor(.secondary)}} */
+                   Text("時間未設定").foregroundColor(.secondary)
+                    
+                }
+                        
+                    }
                 
                 
                 //種類の選択
+                
+                Section(header: Text("曜日")) {
+                
                 Picker(selection: $category, label: Text("種類")) {
                     ForEach(categories, id: \.self) { category in
                     HStack {
                         CategoryImage(category)
                         Text(category.toString())
                         
-                    }.tag(category.rawValue)
+                    }
+                    .tag(category.rawValue)
                     .foregroundColor(.black)
                     }
-                    
                 }
                 .foregroundColor(.black)
-                
-                
-                
+                }
 
-                
-                
                 //メモ（テストの内容とか一言）
-                    Section(header: Text("メモ")) {
-                    TextField("メモ", text: $task2)}
+           /*         Section(header: Text("メモ")) {
+                    TextField("メモ", text: $task2)
+                        .foregroundColor(.black)
+                    }
+ 
+ */
                 
-              Section(header: Text("")) {
-                VStack {
+                
+                
+              Section(header: Text("録音")) {
                     NavigationLink(destination: recordRecord()) {
                         Text("録音")  //, text: $record
+                            .foregroundColor(.black)
                     }
-                    .foregroundColor(.black)
+                            .foregroundColor(.black)
+                
                 }
-              //  }
              
                  
                 
@@ -196,9 +200,14 @@ struct newTask_Previews: PreviewProvider {
     static let context = (UIApplication.shared.delegate as! AppDelegate)
         .persistentContainer.viewContext
     static var previews: some View {
-        newTask()
+        let newTodo = Entity(context: context)
+        return NavigationView {
+            
+        
+            EditTask(todo: newTodo)
             .environment(\.managedObjectContext, context)
     }
 }
 
 }
+

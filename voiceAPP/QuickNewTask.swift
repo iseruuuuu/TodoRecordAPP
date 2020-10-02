@@ -34,6 +34,7 @@ struct QuickNewTask: View {
                 Button(action: { self.addNewtasks()
                 }) {
                     Text("追加")
+                        .foregroundColor(.blue)
                 }
                 Button(action: { self.cancelTask()
             }) {

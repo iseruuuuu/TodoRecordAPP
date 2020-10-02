@@ -32,7 +32,9 @@ struct  Homee : View {
     var body: some View {
         NavigationView{
             VStack {
-                List(self.audios,id: \.self){i in
+                List {
+                    
+                ForEach(self.audios,id: \.self){i in
                     VStack {
             // printing only file name....　ファイルの印刷
                 Text(i.relativeString)
@@ -97,12 +99,16 @@ struct  Homee : View {
             }
             .foregroundColor(.blue)
             .font(.headline)
-            
             }
+                       
+           
+          
+            }
+                 
                        
         
                     }
-    
+                .onDelete(perform: rowRemove)
                 }
                 
                 
@@ -257,7 +263,7 @@ struct  Homee : View {
     }
 
     
-    func delete(at index:Int) {
+    func onDelete(at index:Int) {
         audios.remove(at:index)
     }
     

@@ -8,6 +8,31 @@
 
     import SwiftUI
     import AVFoundation
+    import Speech
+
+
+
+
+
+//Function that displays an alert
+func displayAlert(title:String, message:String)
+{ let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+     alert.addAction(UIAlertAction(title: "dismiss", style: .default, handler: nil))
+    
+}
+
+
+
+
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    cell.textLabel?.text = String(indexPath.row + 1)
+    return cell
+}
+
+
+
+
 
 
     struct EditTask: View {
@@ -37,6 +62,18 @@
                 TextField("情報の入力", text: Binding($todo.task,"内容の編集"))
     }
             .foregroundColor(.black)
+            
+            
+            Section(header: Toggle(isOn: Binding(isNotNil: $todo.time, defaultValue: Date())){Text("時間を指定する")}) {
+                if todo.time != nil {
+                    DatePicker(selection: Binding($todo.time, Date()), label: { Text("日時") })
+                } else {
+                    Text("時間未設定").foregroundColor(.secondary)
+                }
+            }
+            
+            
+            
            
     Picker(selection: $todo.category, label: Text("種類")) {
         ForEach(categories, id: \.self) { category in
@@ -61,11 +98,11 @@
     .foregroundColor(.black)
             
     Section(header: Text("録音")) {
-        VStack {
+       // VStack {
            NavigationLink(destination: recordRecord()) {
                 Text("録音")
             
-    }
+    //}
            
            .foregroundColor(.black)
            

@@ -17,6 +17,7 @@ extension Entity {
     static func create(in managedObjectContext: NSManagedObjectContext,
                        category: Category,
                        task: String,
+                       //task2: String,
                        time: Date? = Date()){
         let todo = self.init(context: managedObjectContext)
         print(task)
