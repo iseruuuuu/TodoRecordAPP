@@ -27,10 +27,14 @@ struct QuickNewTask: View {
     var body: some View {
             HStack {
                 TextField("新しい記録", text: $newTask, onCommit:  {
+                    
                     self.addNewtasks()
-                })
+                    
+                }
+                )
 //textFieldStyle(RoundedBorderTextFieldStyle())は、文字の枠
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                .foregroundColor(.black)
                 Button(action: { self.addNewtasks()
                 }) {
                     Text("追加")

@@ -19,6 +19,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, UITableViewDele
     @IBOutlet weak var buttonLabel: UIButton!
     @IBOutlet weak var myTableView: UITableView!
     
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             //setting up session 音声の許可の設定
@@ -79,12 +80,10 @@ struct newTask: View {
     
     @State var task: String = ""
     @State var task2: String = ""
-   // @State var record: Date? = Date()
     @State var time: Date? = Date()
     @State var category: Int16 = Entity.Category.ImpUrg_1st.rawValue
     var categories: [Entity.Category]
         = [.ImpUrg_1st, .ImpNUrg_2nd, .NImpUrg_3rd, .NImpNUrg_4th, .NImpNUrg_5th, .NImpNUrg_6th]
-    
     @Environment(\.managedObjectContext) var viewContext
     
     fileprivate func save() {
@@ -114,6 +113,8 @@ struct newTask: View {
                 }
                     .foregroundColor(.black)
                 
+                
+                
                     Section(header: Toggle(isOn: Binding(isNotNil: $time, defaultValue: Date())){Text("時間設定")}) {
                     if time != nil {
                DatePicker(selection: Binding($time, Date()), label: { Text("日時")})
@@ -134,14 +135,13 @@ struct newTask: View {
                     HStack {
                         CategoryImage(category)
                         Text(category.toString())
-                        
                     }
                     .tag(category.rawValue)
                     .foregroundColor(.black)
-                    }
                 }
-                .foregroundColor(.black)
-                }
+            }
+            .foregroundColor(.black)
+        }
 
                 //メモ（テストの内容とか一言）
            /*         Section(header: Text("メモ")) {
@@ -154,7 +154,7 @@ struct newTask: View {
                 
                 
               Section(header: Text("録音")) {
-                    NavigationLink(destination: recordRecord()) {
+                    NavigationLink(destination: recordNew()) {
                         Text("録音")  //, text: $record
                             .foregroundColor(.black)
                     }
@@ -184,17 +184,13 @@ struct newTask: View {
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("保存")
-                    
-                    
-             
-                    
-                    
+                    }
+                    .foregroundColor(.blue)
+                )
             }
-                .foregroundColor(.blue)
-            )
         }
     }
-}
+
 
 struct newTask_Previews: PreviewProvider {
     static let context = (UIApplication.shared.delegate as! AppDelegate)
@@ -202,8 +198,6 @@ struct newTask_Previews: PreviewProvider {
     static var previews: some View {
         let newTodo = Entity(context: context)
         return NavigationView {
-            
-        
             EditTask(todo: newTodo)
             .environment(\.managedObjectContext, context)
     }

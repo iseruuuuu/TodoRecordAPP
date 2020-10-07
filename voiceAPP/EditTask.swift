@@ -12,17 +12,17 @@
 
 
 
-
+/*
 
 //Function that displays an alert
 func displayAlert(title:String, message:String)
 { let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-     alert.addAction(UIAlertAction(title: "dismiss", style: .default, handler: nil))
-    
+     alert.addAction(UIAlertAction(title: "dismiss", style: .default, handler: nil
+     ))
 }
 
-
-
+*/
+/*
 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -31,13 +31,18 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 }
 
 
-
+*/
 
 
 
     struct EditTask: View {
+        
     @ObservedObject var todo: Entity
+        
+ //   @ObservedObject var keyboard = KeyboardObserver()
+        
     @State var showingSheet = false
+        
     var categories: [Entity.Category]
         = [.ImpUrg_1st, .ImpNUrg_2nd, .NImpUrg_3rd, .NImpNUrg_4th, .NImpNUrg_5th, .NImpNUrg_6th]
     @Environment(\.managedObjectContext) var viewContext
@@ -47,7 +52,9 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
             try self.viewContext.save()
    } catch {
             let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")   }}
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+    }
 
     fileprivate func delete() {
         viewContext.delete(todo)
@@ -56,6 +63,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
     //enviromentは、
     @Environment(\.presentationMode) var presentationMode
+        
         var body: some View {
         Form {
             Section(header: Text("タスク")) {

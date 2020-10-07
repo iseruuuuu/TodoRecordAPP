@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE3485B825299A4C0050E211 /* AudioRecorder2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3485B725299A4C0050E211 /* AudioRecorder2.swift */; };
 		CE4340A625047F42005E56C6 /* DetailRoww.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4340A525047F42005E56C6 /* DetailRoww.swift */; };
 		CE4340A82504887D005E56C6 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4340A72504887D005E56C6 /* CheckBox.swift */; };
 		CE4340AA2504FDB9005E56C6 /* newTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4340A92504FDB9005E56C6 /* newTask.swift */; };
@@ -16,6 +17,8 @@
 		CEA322172505DC0E0053EBC1 /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA322162505DC0E0053EBC1 /* KeyboardObserver.swift */; };
 		CEA322192505DD020053EBC1 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA322182505DD020053EBC1 /* UIApplication+Extension.swift */; };
 		CEC41D12250CBB3900FD2274 /* recordNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC41D11250CBB3900FD2274 /* recordNew.swift */; };
+		CEE89DCC25270A9F006F9098 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE89DCB25270A9F006F9098 /* AudioRecorder.swift */; };
+		CEE89DD125271E98006F9098 /* recordRecordRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE89DD025271E98006F9098 /* recordRecordRecord.swift */; };
 		CEFF3D9E25036C1E00085D2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3D9D25036C1E00085D2C /* AppDelegate.swift */; };
 		CEFF3DA025036C1E00085D2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3D9F25036C1E00085D2C /* SceneDelegate.swift */; };
 		CEFF3DA325036C1E00085D2C /* voiceAPP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3DA125036C1E00085D2C /* voiceAPP.xcdatamodeld */; };
@@ -52,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE3485B725299A4C0050E211 /* AudioRecorder2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder2.swift; sourceTree = "<group>"; };
 		CE4340A525047F42005E56C6 /* DetailRoww.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRoww.swift; sourceTree = "<group>"; };
 		CE4340A72504887D005E56C6 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		CE4340A92504FDB9005E56C6 /* newTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTask.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 		CEA322162505DC0E0053EBC1 /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
 		CEA322182505DD020053EBC1 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		CEC41D11250CBB3900FD2274 /* recordNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordNew.swift; sourceTree = "<group>"; };
+		CEE89DCB25270A9F006F9098 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		CEE89DD025271E98006F9098 /* recordRecordRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordRecordRecord.swift; sourceTree = "<group>"; };
 		CEFF3D9A25036C1E00085D2C /* voiceAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = voiceAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFF3D9D25036C1E00085D2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEFF3D9F25036C1E00085D2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 				CEA322162505DC0E0053EBC1 /* KeyboardObserver.swift */,
 				CEC41D11250CBB3900FD2274 /* recordNew.swift */,
 				CE4BB4CF2512F59E00CA6A9D /* recordRecord.swift */,
+				CEE89DD025271E98006F9098 /* recordRecordRecord.swift */,
 				CEFF3DA625036C2100085D2C /* Assets.xcassets */,
 				CEFF3DAB25036C2100085D2C /* LaunchScreen.storyboard */,
 				CEFF3DAE25036C2100085D2C /* Info.plist */,
@@ -191,6 +198,8 @@
 				CEFF3DD72503B36200085D2C /* Entity+Extension.swift */,
 				CE4340AD2505043C005E56C6 /* Binding+Extension.swift */,
 				CEA322182505DD020053EBC1 /* UIApplication+Extension.swift */,
+				CEE89DCB25270A9F006F9098 /* AudioRecorder.swift */,
+				CE3485B725299A4C0050E211 /* AudioRecorder2.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -330,6 +339,7 @@
 				CEFF3DDC2503C61300085D2C /* QuickNewTask.swift in Sources */,
 				CE4BB4D02512F59E00CA6A9D /* recordRecord.swift in Sources */,
 				CEA322132505C4E80053EBC1 /* EditTask.swift in Sources */,
+				CEE89DD125271E98006F9098 /* recordRecordRecord.swift in Sources */,
 				CEC41D12250CBB3900FD2274 /* recordNew.swift in Sources */,
 				CEFF3DE025046BD100085D2C /* Llist.swift in Sources */,
 				CEA322192505DD020053EBC1 /* UIApplication+Extension.swift in Sources */,
@@ -341,6 +351,8 @@
 				CEFF3DA525036C1E00085D2C /* ContentView.swift in Sources */,
 				CEFF3DD125036D7E00085D2C /* CategoryImage.swift in Sources */,
 				CEFF3DD82503B36200085D2C /* Entity+Extension.swift in Sources */,
+				CEE89DCC25270A9F006F9098 /* AudioRecorder.swift in Sources */,
+				CE3485B825299A4C0050E211 /* AudioRecorder2.swift in Sources */,
 				CE4340A625047F42005E56C6 /* DetailRoww.swift in Sources */,
 				CEFF3DA025036C1E00085D2C /* SceneDelegate.swift in Sources */,
 				CEA322172505DC0E0053EBC1 /* KeyboardObserver.swift in Sources */,

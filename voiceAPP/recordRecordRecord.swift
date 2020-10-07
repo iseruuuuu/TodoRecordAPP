@@ -1,4 +1,5 @@
 
+
 //文字起こしも入れたいけど、１分が限界らしい。
 //バックグラウンド再生ができるようになった。
 
@@ -13,8 +14,7 @@ import AVFoundation
 
 
 
-struct recordNew: View {
-    
+struct recordRecordRecord: View {
     let audioRecorder: AudioRecorder = AudioRecorder()
     @State var isRecording = false
     @State private var selection: Int? = nil
@@ -28,18 +28,14 @@ struct recordNew: View {
     @State var session : AVAudioSession!
     @State var recorder : AVAudioRecorder!
     internal var audioPlayer: AVAudioPlayer!
-    
-    
   
     
     
     //スライダーの設定
     @State private var currentValue: Double = 50
     @State private var textActive = false
-    @State private var volume: Float = 0.5
+    @State private var volume = 0.0
     @State private var seekPosition : Double = 0.3
-    @State private var sVolume: Float = UserDefaults.standard.float(forKey: "sVolume")
-    
     
     
     var body: some View {
@@ -139,13 +135,13 @@ struct recordNew: View {
         }
           
         
-        /*     ForEach(self.audioRecorder ,id: \.self){i in
-            
+       /*      ForEach(self.audio ,id: \.self){i in
+                VStack {
             Text(i.relativeString)
             
-        }
-        */
-      
+                }}
+        
+      */
     
         Text("　音声名： record.m4a　")
             .padding(.top, 20)
@@ -194,24 +190,6 @@ struct recordNew: View {
             Spacer()
         }
       
-        HStack {
-            Text("　MIN")
-                .foregroundColor(.black)
-            Slider(value: $sVolume, in:0.0...100.0, onEditingChanged: { _ in
-                
-            })
-        Text("MAX　")
-            .foregroundColor(.black)
-        }
-        .padding(.top, 40)
-        HStack {
-            Spacer()
-            Text("音量:\(Int(self.volume))")
-                .foregroundColor(.black)
-            Spacer()
-        }
-        
-        
         
         
         HStack (spacing: 145){
@@ -242,22 +220,19 @@ struct recordNew: View {
         
             }
      
-            }
-        
     }
     
     
     
     
     
-    
+    }
 
 
 
-struct recordNew_Previews: PreviewProvider {
+struct recordRecorderRecorder_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
-
 

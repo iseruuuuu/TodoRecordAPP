@@ -1,11 +1,10 @@
 //
 //  KeyboardObserver.swift
-//  voiceAPP
+//  Todo
 //
-//  Created by user on 2020/09/07.
-//  Copyright © 2020 user. All rights reserved.
+//  Created by user.name on 2020/05/29.
+//  Copyright © 2020 example.com. All rights reserved.
 //
-
 import SwiftUI
 import Combine
 
@@ -49,3 +48,4 @@ class KeyboardObserver: ObservableObject {
         }
     }
 }
+
