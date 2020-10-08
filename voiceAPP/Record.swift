@@ -96,6 +96,7 @@ struct Record: View {
                 self.audioRecorder.playStop()
             }) {
                 Image(systemName: "stop")
+                    .hidden()
             }
             .font(.largeTitle)
             .foregroundColor(.blue)

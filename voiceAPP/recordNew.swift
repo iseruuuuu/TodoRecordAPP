@@ -221,6 +221,9 @@ struct recordNew: View {
             
         Button(action: {
             self.audioRecorder.record()
+         
+            _ = self.audioRecorder.recordStop()
+            
         }) {
             Image(systemName: "waveform.circle")
         }
@@ -234,6 +237,7 @@ struct recordNew: View {
             _ = self.audioRecorder.recordStop()
         }) {
             Image(systemName: "record.circle")
+            
             
         }
         .foregroundColor(.blue)

@@ -18,26 +18,9 @@ class AudioRecorder {
     private var audioRecorder: AVAudioRecorder!
     internal var audioPlayer: AVAudioPlayer!
     var audios : [URL] = []
-    /*
-    // object for audio file 追加したもの
-    var audioFile:AVAudioFile!
     
-    var PCBuffer:AVAudioPCMBuffer!
+    var audioFilename: URL!
     
-    var address:String = ""
-    
-    var buffer:[[Float]]! = Array<Array<Float>>()
-    
-    var samplingRate:Double?
-    var nChannel:Int?
-    var nframe:Int?
-    
-    init(address:String) {
-        self.address = address
- 
-    }
-    
- */
     
     //音声の録音をするためのもの
     internal func record()  {
@@ -47,7 +30,10 @@ class AudioRecorder {
     //    self.getAudios()
     //    return
         _ = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-      //  let fileName = URL.appendingPathComponent("record\(self.audios.count + 1"))
+     
+        
+        audioFilename = Bundle.main.bundleURL.appendingPathComponent("sound.m5p")
+        
         
         let setting = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -57,7 +43,7 @@ class AudioRecorder {
         ]
         
        audioRecorder = try! AVAudioRecorder(url: getURL(), settings: setting)
-     //   self.audioRecorder = try! AVAudioRecorder(url: getURL(), settings: setting)
+       self.audioRecorder = try! AVAudioRecorder(url: getURL(), settings: setting)
         audioRecorder.record()
     }
     
@@ -76,6 +62,9 @@ class AudioRecorder {
         audioPlayer = try! AVAudioPlayer(contentsOf: getURL())
         audioPlayer.volume = 10.0
         audioPlayer.play()
+        
+      //  audioPlayer.stop()
+        
     }
     
     internal func playStop() {
