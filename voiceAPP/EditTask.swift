@@ -107,7 +107,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
             
     Section(header: Text("録音")) {
        // VStack {
-           NavigationLink(destination: recordRecord()) {
+           NavigationLink(destination: recordNew()) {
                 Text("録音")
             
     //}

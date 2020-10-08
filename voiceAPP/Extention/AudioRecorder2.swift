@@ -19,7 +19,12 @@ class AudioRecorder2 {
     
     internal func record() {
         let session = AVAudioSession.sharedInstance()
+        
+        
         try! session.setCategory(AVAudioSession.Category.playAndRecord)
+        
+        try! session.setCategory(.playAndRecord, mode: .default)
+        
         try! session.setActive(true)
     //    self.getAudios()
     //    return
@@ -35,6 +40,9 @@ class AudioRecorder2 {
         
         recorder = try! AVAudioRecorder(url: getURL(), settings: settings)
         self.recorder = try! AVAudioRecorder(url: getURL(), settings: settings)
+        
+        recorder.delegate = self as? AVAudioRecorderDelegate
+        
         self.recorder.record()
         
     }
@@ -67,15 +75,16 @@ class AudioRecorder2 {
        
         do{
         
-        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let result = try! FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: .producesRelativePathURLs)
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let docsDirect = path[0]
+            let audioUrl = docsDirect.appendingPathComponent("recording.m4a")
+      //  let result = try! FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: .producesRelativePathURLs)
 
-            self.audios.removeAll()
+            return audioUrl
             
-        for i in result {
-            self.audios.append(i)
-        }
-        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("record.m4a")
+           
+            
+      
     }
         
       

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE3485B825299A4C0050E211 /* AudioRecorder2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3485B725299A4C0050E211 /* AudioRecorder2.swift */; };
+		CE3932A9252EC3B7005FE52B /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3932A8252EC3B7005FE52B /* Record.swift */; };
 		CE4340A625047F42005E56C6 /* DetailRoww.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4340A525047F42005E56C6 /* DetailRoww.swift */; };
 		CE4340A82504887D005E56C6 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4340A72504887D005E56C6 /* CheckBox.swift */; };
 		CE4340AA2504FDB9005E56C6 /* newTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4340A92504FDB9005E56C6 /* newTask.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		CE3485B725299A4C0050E211 /* AudioRecorder2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder2.swift; sourceTree = "<group>"; };
+		CE3932A8252EC3B7005FE52B /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		CE4340A525047F42005E56C6 /* DetailRoww.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRoww.swift; sourceTree = "<group>"; };
 		CE4340A72504887D005E56C6 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		CE4340A92504FDB9005E56C6 /* newTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTask.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				CEC41D11250CBB3900FD2274 /* recordNew.swift */,
 				CE4BB4CF2512F59E00CA6A9D /* recordRecord.swift */,
 				CEE89DD025271E98006F9098 /* recordRecordRecord.swift */,
+				CE3932A8252EC3B7005FE52B /* Record.swift */,
 				CEFF3DA625036C2100085D2C /* Assets.xcassets */,
 				CEFF3DAB25036C2100085D2C /* LaunchScreen.storyboard */,
 				CEFF3DAE25036C2100085D2C /* Info.plist */,
@@ -349,6 +352,7 @@
 				CEFF3D9E25036C1E00085D2C /* AppDelegate.swift in Sources */,
 				CEFF3DA325036C1E00085D2C /* voiceAPP.xcdatamodeld in Sources */,
 				CEFF3DA525036C1E00085D2C /* ContentView.swift in Sources */,
+				CE3932A9252EC3B7005FE52B /* Record.swift in Sources */,
 				CEFF3DD125036D7E00085D2C /* CategoryImage.swift in Sources */,
 				CEFF3DD82503B36200085D2C /* Entity+Extension.swift in Sources */,
 				CEE89DCC25270A9F006F9098 /* AudioRecorder.swift in Sources */,

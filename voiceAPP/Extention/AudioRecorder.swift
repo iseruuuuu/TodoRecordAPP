@@ -4,12 +4,11 @@
 //
 //  Created by user on 2020/10/02.
 //  Copyright © 2020 user. All rights reserved.
-//
+//https://kerubito.net/technology/9869を参考に作成
 
 import AVFoundation
 import MediaPlayer
 import SwiftUI
-
 
 
 class AudioRecorder {
@@ -19,10 +18,29 @@ class AudioRecorder {
     private var audioRecorder: AVAudioRecorder!
     internal var audioPlayer: AVAudioPlayer!
     var audios : [URL] = []
+    /*
+    // object for audio file 追加したもの
+    var audioFile:AVAudioFile!
     
-    //レコードの中身。
+    var PCBuffer:AVAudioPCMBuffer!
     
-    internal func record() {
+    var address:String = ""
+    
+    var buffer:[[Float]]! = Array<Array<Float>>()
+    
+    var samplingRate:Double?
+    var nChannel:Int?
+    var nframe:Int?
+    
+    init(address:String) {
+        self.address = address
+ 
+    }
+    
+ */
+    
+    //音声の録音をするためのもの
+    internal func record()  {
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSession.Category.playAndRecord)
         try! session.setActive(true)
@@ -31,19 +49,23 @@ class AudioRecorder {
         _ = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
       //  let fileName = URL.appendingPathComponent("record\(self.audios.count + 1"))
         
-        let settings = [
+        let setting = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 44100,
             AVNumberOfChannelsKey: 2,
             AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
         
-        audioRecorder = try! AVAudioRecorder(url: getURL(), settings: settings)
-        self.audioRecorder = try! AVAudioRecorder(url: getURL(), settings: settings)
+       audioRecorder = try! AVAudioRecorder(url: getURL(), settings: setting)
+     //   self.audioRecorder = try! AVAudioRecorder(url: getURL(), settings: setting)
         audioRecorder.record()
     }
     
     
+    
+    
+    
+    //ファイルからバイナリーにして戻る。
     internal func recordStop() -> Data?{
         audioRecorder.stop()
         let data   = try? Data(contentsOf: getURL())
@@ -79,13 +101,19 @@ class AudioRecorder {
         for i in result {
             self.audios.append(i)
         }
-        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("record.m4a")
+        //ドキュメント直下に「sound.m4a」として録音データをファイルにて保存します。
+        //m4aはAAC形式の拡張子
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("sound.m4a")
     }
-        
-      
 }
     
+  /*
+    private func getURL() -> URL {
+        return FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask)[0].appendingPathComponent("")
+    }
+    */
     
+    /*
     func getURL() {
         do {
             let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -99,6 +127,6 @@ class AudioRecorder {
     }
     
     
-    
+    */
     
 }

@@ -154,7 +154,7 @@ struct newTask: View {
                 
                 
               Section(header: Text("録音")) {
-                    NavigationLink(destination: recordNew()) {
+                    NavigationLink(destination: recordRecordRecord()) {
                         Text("録音")  //, text: $record
                             .foregroundColor(.black)
                     }

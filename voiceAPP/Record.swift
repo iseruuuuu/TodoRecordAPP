@@ -11,9 +11,7 @@ import AVFoundation
 
 
 
-
-
-struct recordNew: View {
+struct Record: View {
     
     let audioRecorder: AudioRecorder = AudioRecorder()
     @State var isRecording = false
@@ -40,12 +38,13 @@ struct recordNew: View {
     @State private var seekPosition : Double = 0.3
     @State private var sVolume: Float = UserDefaults.standard.float(forKey: "sVolume")
     //現在の再生位置
-  //  @State public var currentPosition: TimeInterval
+    @State private var currentPosition: TimeInterval
     
     
     
     var body: some View {
        
+    //    List(selection: $selection){
         
      //   ForEach(self.audios, id, \.self) {i in Text(i.relativeString) }
         
@@ -255,7 +254,7 @@ struct recordNew: View {
 
 
 
-struct recordNew_Previews: PreviewProvider {
+struct Record_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
