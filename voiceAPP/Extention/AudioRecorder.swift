@@ -27,11 +27,11 @@ class AudioRecorder {
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSession.Category.playAndRecord)
         try! session.setActive(true)
-    //    self.getAudios()
-    //    return
+        //    self.getAudios()
+        //    return
         _ = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-     
         
+        //名前がかぶらないように変更。
         audioFilename = Bundle.main.bundleURL.appendingPathComponent("sound.m5p")
         
         
@@ -42,8 +42,8 @@ class AudioRecorder {
             AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
         
-       audioRecorder = try! AVAudioRecorder(url: getURL(), settings: setting)
-       self.audioRecorder = try! AVAudioRecorder(url: getURL(), settings: setting)
+        audioRecorder = try! AVAudioRecorder(url: getURL(), settings: setting)
+        self.audioRecorder = try! AVAudioRecorder(url: getURL(), settings: setting)
         audioRecorder.record()
     }
     
@@ -63,59 +63,59 @@ class AudioRecorder {
         audioPlayer.volume = 10.0
         audioPlayer.play()
         
-      //  audioPlayer.stop()
+        //  audioPlayer.stop()
         
     }
     
     internal func playStop() {
         audioPlayer.stop()
     }
-  /*
-    internal func recordApper() {
-        audioRecorder.audios()
-        
-    }
-    */
+    /*
+     internal func recordApper() {
+     audioRecorder.audios()
+     
+     }
+     */
     
     
     private func getURL() -> URL{
-       
-        do{
         
-        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let result = try! FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: .producesRelativePathURLs)
-
-            self.audios.removeAll()
+        do{
             
-        for i in result {
-            self.audios.append(i)
-        }
-        //ドキュメント直下に「sound.m4a」として録音データをファイルにて保存します。
-        //m4aはAAC形式の拡張子
-        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("sound.m4a")
-    }
-}
-    
-  /*
-    private func getURL() -> URL {
-        return FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask)[0].appendingPathComponent("")
-    }
-    */
-    
-    /*
-    func getURL() {
-        do {
             let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
             let result = try! FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: .producesRelativePathURLs)
+            
+            self.audios.removeAll()
+            
             for i in result {
                 self.audios.append(i)
             }
-        
+            //ドキュメント直下に「sound.m4a」として録音データをファイルにて保存します。
+            //m4aはAAC形式の拡張子
+            return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("sound.m4a")
         }
-        
     }
     
+    /*
+     private func getURL() -> URL {
+     return FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask)[0].appendingPathComponent("")
+     }
+     */
     
-    */
+    /*
+     func getURL() {
+     do {
+     let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+     let result = try! FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: .producesRelativePathURLs)
+     for i in result {
+     self.audios.append(i)
+     }
+     
+     }
+     
+     }
+     
+     
+     */
     
 }

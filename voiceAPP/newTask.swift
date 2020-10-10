@@ -11,7 +11,7 @@ import Speech
 import AVFoundation
 
 class ViewController: UIViewController, AVAudioRecorderDelegate, UITableViewDelegate, UITableViewDataSource {
-   
+    
     var recordingSession:AVAudioSession!
     var audioRecorder:AVAudioRecorder!
     var audioPlayer:AVAudioPlayer!
@@ -20,63 +20,63 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, UITableViewDele
     @IBOutlet weak var myTableView: UITableView!
     
     
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            //setting up session 音声の許可の設定
-            recordingSession = AVAudioSession.sharedInstance()
-            if let number:Int = UserDefaults.standard.object(forKey: "myNumber") as? Int    {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //setting up session 音声の許可の設定
+        recordingSession = AVAudioSession.sharedInstance()
+        if let number:Int = UserDefaults.standard.object(forKey: "myNumber") as? Int    {
             numberOfRecords = number   }
-            AVAudioSession.sharedInstance().requestRecordPermission { (hasPermission) in
+        AVAudioSession.sharedInstance().requestRecordPermission { (hasPermission) in
             if hasPermission{  print ("ACCEPTED")  }}}
-            //Function that gets path to directory
-            func getDirectory() -> URL {
-            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-            let documentDirectory = paths[0]
-            return documentDirectory
-        }
-
-
-        //Function that displays an alert
-        func displayAlert(title:String, message:String)
-        { let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-             alert.addAction(UIAlertAction(title: "dismiss", style: .default, handler: nil))
-             present(alert, animated: true, completion: nil)
-        }
-        
-        
-        //SETTING UO Table view  テーブルの設定
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return numberOfRecords
-        }
-        
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            cell.textLabel?.text = String(indexPath.row + 1)
-            return cell
-        }
-        
+    //Function that gets path to directory
+    func getDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = paths[0]
+        return documentDirectory
+    }
+    
+    
+    //Function that displays an alert
+    func displayAlert(title:String, message:String)
+    { let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "dismiss", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    //SETTING UO Table view  テーブルの設定
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return numberOfRecords
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = String(indexPath.row + 1)
+        return cell
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-        {
-            let path = getDirectory().appendingPathComponent("\(indexPath.row + 1).m4a")
-            
-            do
+    {
+        let path = getDirectory().appendingPathComponent("\(indexPath.row + 1).m4a")
+        
+        do
             {
-             audioPlayer = try AVAudioPlayer(contentsOf: path)
+                audioPlayer = try AVAudioPlayer(contentsOf: path)
                 audioPlayer.play()
             }
-            catch
-            {
-                
-            }
+        catch
+        {
+            
         }
     }
+}
 
 
-    
+
 
 struct newTask: View {
     
-  //  @ObservedObject var todo: Entity
+    //  @ObservedObject var todo: Entity
     
     @State var task: String = ""
     @State var task2: String = ""
@@ -109,87 +109,87 @@ struct newTask: View {
             Form {
                 Section(header: Text("内容")) {
                     TextField("内容の入力", text: $task)
-                    .foregroundColor(.black)
+                        .foregroundColor(.black)
                 }
-                    .foregroundColor(.black)
+                .foregroundColor(.black)
                 
                 
                 
-                    Section(header: Toggle(isOn: Binding(isNotNil: $time, defaultValue: Date())){Text("時間設定")}) {
+                Section(header: Toggle(isOn: Binding(isNotNil: $time, defaultValue: Date())){Text("時間設定")}) {
                     if time != nil {
-               DatePicker(selection: Binding($time, Date()), label: { Text("日時")})
-                } else {
-                   Text("時間未設定").foregroundColor(.secondary)
-                    
-                }
+                        DatePicker(selection: Binding($time, Date()), label: { Text("日時")})
+                    } else {
+                        Text("時間未設定").foregroundColor(.secondary)
                         
                     }
+                    
+                }
                 
                 
                 //種類の選択
                 
                 Section(header: Text("曜日")) {
-                
-                Picker(selection: $category, label: Text("種類")) {
-                    ForEach(categories, id: \.self) { category in
-                    HStack {
-                        CategoryImage(category)
-                        Text(category.toString())
+                    
+                    Picker(selection: $category, label: Text("種類")) {
+                        ForEach(categories, id: \.self) { category in
+                            HStack {
+                                CategoryImage(category)
+                                Text(category.toString())
+                            }
+                            .tag(category.rawValue)
+                            .foregroundColor(.black)
+                        }
                     }
-                    .tag(category.rawValue)
                     .foregroundColor(.black)
                 }
-            }
-            .foregroundColor(.black)
-        }
-
+                
                 //メモ（テストの内容とか一言）
-           /*         Section(header: Text("メモ")) {
-                    TextField("メモ", text: $task2)
-                        .foregroundColor(.black)
-                    }
- 
- */
+                /*         Section(header: Text("メモ")) {
+                 TextField("メモ", text: $task2)
+                 .foregroundColor(.black)
+                 }
+                 
+                 */
                 
                 
                 
-              Section(header: Text("録音")) {
-                    NavigationLink(destination: recordRecordRecord()) {
+                Section(header: Text("録音")) {
+                    NavigationLink(destination: recordRecord()) {
                         Text("録音")  //, text: $record
                             .foregroundColor(.black)
                     }
-                            .foregroundColor(.black)
-                
+                    .foregroundColor(.black)
+                    
                 }
-             
-                 
                 
                 
-    
-
-
                 
-
+                
+                
+                
+                
+                
+                
                 
                 
             }.navigationBarTitle("内容の追加")
-                .navigationBarItems(trailing: Button(action: {
-                    Entity.create(in: self.viewContext, category: Entity.Category(rawValue: self.category) ?? .ImpUrg_1st,
-                                  task: self.task, time: self.time) //task2: self.task
-                    
-                    
-                    
-                    self.save()
-                    //dismissで画面を閉じる
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("保存")
-                    }
-                    .foregroundColor(.blue)
-                )
+            .navigationBarItems(trailing: Button(action: {
+                Entity.create(in: self.viewContext, category: Entity.Category(rawValue: self.category) ?? .ImpUrg_1st,
+                              task: self.task, time: self.time) //task2: self.task
+                
+                
+                
+                self.save()
+                //dismissで画面を閉じる
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                Text("保存")
             }
+            .foregroundColor(.blue)
+            )
         }
     }
+}
 
 
 struct newTask_Previews: PreviewProvider {
@@ -199,9 +199,9 @@ struct newTask_Previews: PreviewProvider {
         let newTodo = Entity(context: context)
         return NavigationView {
             EditTask(todo: newTodo)
-            .environment(\.managedObjectContext, context)
+                .environment(\.managedObjectContext, context)
+        }
     }
-}
-
+    
 }
 
