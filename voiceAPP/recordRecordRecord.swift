@@ -9,11 +9,6 @@ import MediaPlayer
 import AVKit
 import AVFoundation
 
-
-
-
-
-
 struct recordRecordRecord: View {
     let audioRecorder: AudioRecorder = AudioRecorder()
     @State var isRecording = false
@@ -28,7 +23,7 @@ struct recordRecordRecord: View {
     @State var session : AVAudioSession!
     @State var recorder : AVAudioRecorder!
     internal var audioPlayer: AVAudioPlayer!
-  
+    
     
     
     //スライダーの設定
@@ -39,42 +34,42 @@ struct recordRecordRecord: View {
     
     
     var body: some View {
-       
-    //    List(selection: $selection){
         
-     //   ForEach(self.audios, id, \.self) {i in Text(i.relativeString) }
+        //    List(selection: $selection){
+        
+        //   ForEach(self.audios, id, \.self) {i in Text(i.relativeString) }
         
         
-            HStack(spacing: 30) {
-           
-                
-                Button(action: {
-                    print("タップさた")
-                }) {
-                    Image(systemName: "ellipsis")   // システムアイコンを指定
-                        Text("")
+        HStack(spacing: 30) {
             
-                }
-                    .foregroundColor(.blue)
-                    .font(.headline)
-                .padding(.bottom, 40)
-                .padding(.top, 90)
+            
+            Button(action: {
+                print("タップさた")
+            }) {
+                Image(systemName: "ellipsis")   // システムアイコンを指定
+                Text("")
                 
-                
-                Button(action: {
-                    print("タップされま")
-                    }) {
-                    Image(systemName: "gobackward.15")   // システムアイコンを指定
-                        Text("")
-                }
-                .font(.title)
-                .foregroundColor(.blue)
-                .padding(.bottom, 40)
-                .padding(.top, 90)
-                
-                
-                
-
+            }
+            .foregroundColor(.blue)
+            .font(.headline)
+            .padding(.bottom, 40)
+            .padding(.top, 90)
+            
+            
+            Button(action: {
+                print("タップされま")
+            }) {
+                Image(systemName: "gobackward.15")   // システムアイコンを指定
+                Text("")
+            }
+            .font(.title)
+            .foregroundColor(.blue)
+            .padding(.bottom, 40)
+            .padding(.top, 90)
+            
+            
+            
+            
             Button(action: {
                 self.audioRecorder.play()
             }) {
@@ -86,7 +81,7 @@ struct recordRecordRecord: View {
             .padding(.top, 90)
             
             
-           
+            
             
             Button(action:  {
                 self.audioRecorder.playStop()
@@ -95,78 +90,78 @@ struct recordRecordRecord: View {
             }
             .font(.largeTitle)
             .foregroundColor(.blue)
-           .padding(.bottom, 40)
+            .padding(.bottom, 40)
             .padding(.top, 90)
-         
-                
-                
-                
-                
-                
-                //15秒進める。
-                Button(action: {
-                    print("タッした")
-                    }) {
-                    Image(systemName: "goforward.15")   // システムアイコンを指定
-                    Text("")
-                }
-                .font(.title)
-                .foregroundColor(.blue)
-                .padding(.bottom, 40)
-                .padding(.top, 90)
-                
-                
-                
-                //捨てる動作
-                Button(action:  {
-                    print("ました")
-                    }) {
-                    Image(systemName: "trash")   // システムアイコンを指定
-                    Text("")
-                }
-                .foregroundColor(.blue)
-                .font(.headline)
-                .padding(.bottom, 40)
-                .padding(.top, 90)
-                
-              
-                
-                
-        }
-          
-        
-       /*      ForEach(self.audio ,id: \.self){i in
-                VStack {
-            Text(i.relativeString)
             
-                }}
+            
+            
+            
+            
+            
+            //15秒進める。
+            Button(action: {
+                print("タッした")
+            }) {
+                Image(systemName: "goforward.15")   // システムアイコンを指定
+                Text("")
+            }
+            .font(.title)
+            .foregroundColor(.blue)
+            .padding(.bottom, 40)
+            .padding(.top, 90)
+            
+            
+            
+            //捨てる動作
+            Button(action:  {
+                print("ました")
+            }) {
+                Image(systemName: "trash")   // システムアイコンを指定
+                Text("")
+            }
+            .foregroundColor(.blue)
+            .font(.headline)
+            .padding(.bottom, 40)
+            .padding(.top, 90)
+            
+            
+            
+            
+        }
         
-      */
-    
+        
+        /*      ForEach(self.audio ,id: \.self){i in
+         VStack {
+         Text(i.relativeString)
+         
+         }}
+         
+         */
+        
         Text("　音声名： record.m4a　")
             .padding(.top, 20)
             .padding(. bottom, 40)
             .foregroundColor(.black)
             .font(.title)
         
-  
-            
-            
-            
-  
-            HStack {
-                Text("   　")
-                Slider(value: $seekPosition, in: 0...1)
-                Text("　   ")
+        
+        
+        
+        
         
         HStack {
-         //   Text(formatTime(sec: Int(nowPlaying.duration * seekPosition)))
-            Spacer()
-     //       Text("-" + formatTime(sec: Int(nowPlaying.duration * (1 - seekPosition))))
-        
+            Text("   　")
+            Slider(value: $seekPosition, in: 0...1)
+            Text("　   ")
+            
+            HStack {
+                //   Text(formatTime(sec: Int(nowPlaying.duration * seekPosition)))
+                Spacer()
+                //       Text("-" + formatTime(sec: Int(nowPlaying.duration * (1 - seekPosition))))
+                
+            }
         }
-        }
-   //     .padding(.bottom, 40)
+        //     .padding(.bottom, 40)
         
         
         
@@ -179,8 +174,8 @@ struct recordRecordRecord: View {
             Slider(value: $volume, in:0.0...100.0, onEditingChanged: { _ in
                 
             })
-        Text("MAX　")
-            .foregroundColor(.black)
+            Text("MAX　")
+                .foregroundColor(.black)
         }
         .padding(.top, 40)
         HStack {
@@ -189,44 +184,44 @@ struct recordRecordRecord: View {
                 .foregroundColor(.black)
             Spacer()
         }
-      
+        
         
         
         HStack (spacing: 145){
             
-          
             
-        Button(action: {
-            self.audioRecorder.record()
-        }) {
-            Image(systemName: "waveform.circle")
-        }
-        .foregroundColor(.blue)
-        .padding(.bottom, 60)
-        .padding(.top, 20)
-        .font(.largeTitle)
-        
             
-        Button(action: {
-            _ = self.audioRecorder.recordStop()
-        }) {
-            Image(systemName: "record.circle")
-            
-        }
-        .foregroundColor(.blue)
-        .padding(.bottom, 60)
-        .padding(.top, 20)
-        .font(.largeTitle)
-        
+            Button(action: {
+                self.audioRecorder.record()
+            }) {
+                Image(systemName: "waveform.circle")
             }
-     
+            .foregroundColor(.blue)
+            .padding(.bottom, 60)
+            .padding(.top, 20)
+            .font(.largeTitle)
+            
+            
+            Button(action: {
+                _ = self.audioRecorder.recordStop()
+            }) {
+                Image(systemName: "record.circle")
+                
+            }
+            .foregroundColor(.blue)
+            .padding(.bottom, 60)
+            .padding(.top, 20)
+            .font(.largeTitle)
+            
+        }
+        
     }
     
     
     
     
     
-    }
+}
 
 
 

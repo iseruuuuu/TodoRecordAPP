@@ -11,10 +11,10 @@ import CoreData
 
 
 struct Llist: View {
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Entity.time, ascending: true)],
-           animation: .default)
+        animation: .default)
     
     var Llist: FetchedResults<Entity>
     
@@ -50,23 +50,23 @@ struct Llist: View {
                     ForEach(Llist) { todo in
                         if todo.category == self.category.rawValue {
                             NavigationLink(destination: EditTask(todo: todo)) {
-                            DetailRoww(todo: todo, hideIcon: true)
+                                DetailRoww(todo: todo, hideIcon: true)
+                            }
                         }
-                    }
-                }.onDelete(perform: deleteTodo)
-            }
-            QuickNewTask(Category: category)
-            .padding()
+                    }.onDelete(perform: deleteTodo)
+                }
+                QuickNewTask(Category: category)
+                    .padding()
             }.navigationBarTitle(category.toString())
             .navigationBarItems(trailing: EditButton())
         }.onAppear{
-           // self.keyboard.startObserve()
-           // UIApplication.shared.closeKeyboard()
+            // self.keyboard.startObserve()
+            // UIApplication.shared.closeKeyboard()
             
             
         }.onDisappear{
-        //self.keyboard.stopObserve()
-          //  UIApplication.shared.closeKeyboard()
+            //self.keyboard.stopObserve()
+            //  UIApplication.shared.closeKeyboard()
         }.padding(.bottom, keyboard.keyboardHeight)
     }
 }
@@ -79,7 +79,7 @@ struct Llist: View {
 
 struct Llist_Previews: PreviewProvider {
     static let container = (UIApplication.shared.delegate as! AppDelegate)
-    .persistentContainer
+        .persistentContainer
     static let context = container.viewContext
     
     static var previews: some View {
@@ -91,14 +91,14 @@ struct Llist_Previews: PreviewProvider {
         
         // データを追加
         Entity.create(in: context,
-                          category: .ImpUrg_1st, task: "炎上プロジェクト")
+                      category: .ImpUrg_1st, task: "炎上プロジェクト")
         Entity.create(in: context,
-                          category: .ImpNUrg_2nd, task: "自己啓発")
+                      category: .ImpNUrg_2nd, task: "自己啓発")
         Entity.create(in: context,
-                          category: .NImpUrg_3rd, task: "意味のない会議")
+                      category: .NImpUrg_3rd, task: "意味のない会議")
         Entity.create(in: context,
-                          category: .NImpNUrg_4th, task: "暇つぶし")
-
+                      category: .NImpNUrg_4th, task: "暇つぶし")
+        
         return Llist(category: .ImpUrg_1st)
             .environment(\.managedObjectContext, context)
     }

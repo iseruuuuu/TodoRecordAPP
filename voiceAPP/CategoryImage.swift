@@ -18,12 +18,12 @@ struct CategoryImage: View {
     
     var body: some View {
         Image(systemName: category.image())
-        .resizable()
-        .scaledToFit()
-        .foregroundColor(.white)
-        .frame(width: 35, height: 35)
+            .resizable()
+            .scaledToFit()
+            .foregroundColor(.white)
+            .frame(width: 35, height: 35)
             .background(category.color())
-        .cornerRadius(40.0)
+            .cornerRadius(40.0)
     }
 }
 struct CategoryImage_Previews: PreviewProvider {

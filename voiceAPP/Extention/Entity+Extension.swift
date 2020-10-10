@@ -34,7 +34,7 @@ extension Entity {
         //タスクが進行しているのかどうかを判断する
         todo.state = State.todo.rawValue
         
-    
+        
         todo.id = UUID().uuidString
         
         do {
@@ -44,7 +44,7 @@ extension Entity {
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
-
+    
     
     
     enum Category: Int16 {
@@ -52,8 +52,8 @@ extension Entity {
         case ImpNUrg_2nd    // Important & Not Urgent (第Ⅱ領域）
         case NImpUrg_3rd    // Not Important & Urgent（第Ⅲ領域）
         case NImpNUrg_4th   // Not Important & Not Urgent（第Ⅳ領域）
-         case NImpNUrg_5th // Not Important & Not Urgent（第Ⅳ領域）
-         case NImpNUrg_6th
+        case NImpNUrg_5th // Not Important & Not Urgent（第Ⅳ領域）
+        case NImpNUrg_6th
         
         func toString() -> String {
             switch self {
@@ -86,7 +86,7 @@ extension Entity {
                 return "bell"
             case .NImpNUrg_6th:
                 return "globe"
-            
+                
             }
         }
         
@@ -111,7 +111,7 @@ extension Entity {
     enum State: Int16 {
         case todo
         case done
- 
+        
     }
     
     static func count(in managedObjectContext: NSManagedObjectContext,

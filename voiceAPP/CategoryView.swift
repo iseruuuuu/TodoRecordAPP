@@ -28,31 +28,31 @@ struct CategoryView: View {
         
         
         
-       return VStack(alignment: .leading) {
-                Image(systemName: Category.image())
-                    .font(.largeTitle)
-                    .sheet(isPresented: $showList, onDismiss: {self.update()}) {
-                        Llist(category: self.Category)
-                            .environment(\.managedObjectContext,  self.viewContext)
+        return VStack(alignment: .leading) {
+            Image(systemName: Category.image())
+                .font(.largeTitle)
+                .sheet(isPresented: $showList, onDismiss: {self.update()}) {
+                    Llist(category: self.Category)
+                        .environment(\.managedObjectContext,  self.viewContext)
                 }
-                
-                Text(Category.toString())
-                Text("・\(numberOfTasks)タスク")
-                Button(action:  {
-                    self.addNewtask = true
-                }) {
-              Image(systemName: "plus")
-                }.sheet(isPresented: $addNewtask, onDismiss: {self.update()}) { newTask(category: self.Category.rawValue)
-                    .environment(\.managedObjectContext, self.viewContext)
-                }
+            
+            Text(Category.toString())
+            Text("・\(numberOfTasks)タスク")
+            Button(action:  {
+                self.addNewtask = true
+            }) {
+                Image(systemName: "plus")
+            }.sheet(isPresented: $addNewtask, onDismiss: {self.update()}) { newTask(category: self.Category.rawValue)
+                .environment(\.managedObjectContext, self.viewContext)
+            }
             Spacer()
         }
-            .padding()
+        .padding()
         .frame(maxWidth: .infinity, minHeight: 150)
-            .foregroundColor(.white)
-            .background(linear)
-            .cornerRadius(20)
-    .onTapGesture {
+        .foregroundColor(.white)
+        .background(linear)
+        .cornerRadius(20)
+        .onTapGesture {
             self.showList = true
         }
         .onAppear {

@@ -26,9 +26,9 @@ struct CheckBox<Label>: View where Label: View {
                     self.checked.toggle()
                 }
             label()
-            }
         }
     }
+}
 
 
 struct CheckBox_Previews: PreviewProvider {
@@ -38,7 +38,7 @@ struct CheckBox_Previews: PreviewProvider {
                 Text("牛乳を買う")
             }
             CheckBox(checked: .constant(true)) {
-                           Text("牛乳を買う")
+                Text("牛乳を買う")
             }
             
         }

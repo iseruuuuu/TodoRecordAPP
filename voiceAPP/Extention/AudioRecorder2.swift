@@ -26,10 +26,10 @@ class AudioRecorder2 {
         try! session.setCategory(.playAndRecord, mode: .default)
         
         try! session.setActive(true)
-    //    self.getAudios()
-    //    return
+        //    self.getAudios()
+        //    return
         _ = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-     //   let fileName = URL.appendingPathComponent("record\(self.audios.count + 1"))
+        //   let fileName = URL.appendingPathComponent("record\(self.audios.count + 1"))
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -63,50 +63,50 @@ class AudioRecorder2 {
     internal func playStop() {
         audioPlayer.stop()
     }
-  /*
-    internal func recordApper() {
-        audioRecorder.audios()
-        
-    }
-    */
+    /*
+     internal func recordApper() {
+     audioRecorder.audios()
+     
+     }
+     */
     
     
     private func getURL() -> URL{
-       
-        do{
         
-        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let docsDirect = path[0]
+        do{
+            
+            let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            let docsDirect = path[0]
             let audioUrl = docsDirect.appendingPathComponent("recording.m4a")
-      //  let result = try! FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: .producesRelativePathURLs)
-
+            //  let result = try! FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: .producesRelativePathURLs)
+            
             return audioUrl
             
-           
             
-      
-    }
-        
-      
-}
-    /*
-    
-    func getURL() {
-        do {
-            let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            let result = try! FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: .producesRelativePathURLs)
             
-            for i in result {
-                self.audios.append(i)
-            }
-        
-        }catch{
-            print(error.localizedDescription)
+            
         }
         
+        
     }
-    
-    */
+    /*
+     
+     func getURL() {
+     do {
+     let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+     let result = try! FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: .producesRelativePathURLs)
+     
+     for i in result {
+     self.audios.append(i)
+     }
+     
+     }catch{
+     print(error.localizedDescription)
+     }
+     
+     }
+     
+     */
     
     
 }
